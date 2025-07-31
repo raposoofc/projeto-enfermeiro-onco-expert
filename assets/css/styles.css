@@ -1,0 +1,1047 @@
+/* === Estilos Base (Mobile First - 320px a 480px) === */
+body {
+    /* Define a fonte padrão e remove margens */
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    /* Fundo preto metálico com gradiente animado em azul clínico */
+    background: linear-gradient(45deg, #0a0a0a, #1a1a1a, #000000, #2c2c2c);
+    background-size: 400%;
+    animation: gradienteFundo 15s ease infinite;
+    color: #fff;
+
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE 10+ */
+    user-select: none;         /* Standard syntax */
+}
+
+/* Bloquear arrastar e baixar imagens */
+img {
+    -webkit-user-drag: none; /* Safari */
+    -moz-user-select: none;  /* Firefox */
+    -ms-user-select: none;   /* IE 10+ */
+    user-select: none;       /* Standard syntax (para texto em imagens) */
+    pointer-events: none;    /* Impede interações com o mouse, incluindo clique direito para salvar */
+    -webkit-touch-callout: none; /* iOS */
+}
+
+/* Animação do gradiente de fundo */
+@keyframes gradienteFundo {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container principal para centralizar conteúdo */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 15px;
+}
+
+/* Estilos para títulos */
+h1, h2, h3 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Título principal */
+h1 {
+    font-size: 2em;
+    color: #fff;
+}
+
+/* Destaque no título */
+.destaque-titulo {
+    color: #4fe24a; /* Azul clínico */
+}
+
+/* Título secundário */
+h2 {
+    font-size: 1.6em;
+    color: #fff;
+}
+
+/* Título terciário (módulos) */
+h3 {
+    font-size: 1.3em;
+    color: #4fe24a;
+}
+
+/* Parágrafos */
+p {
+    margin-bottom: 15px;
+    font-size: 0.15em;
+    color: #ddd;
+}
+
+/* Texto em negrito */
+strong {
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Ícones dos módulos */
+.icone-modulo {
+    font-size: 2em;
+    color: #4fe24a;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Imagem da seção Hero */
+.imagem-hero {
+    width: 40%; /* 40% da largura da seção ao lado do container em telas maiores */
+    height: auto;
+    min-height: 300px;
+    background-color: transparent; /* Garante fundo transparente */
+    border: none; /* Remove bordas */
+}
+
+.imagem-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ajusta a imagem para caber dentro do container, sem cortar */
+    border-radius: 0; /* Remove qualquer border-radius */
+    border: none; /* Garante que a imagem em si não tenha borda */
+}
+
+/* === Estilos de Botões === */
+.botao {
+    display: inline-flex; /* Usa flexbox para alinhar texto e ícone */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    padding: 15px 30px; /* Padding para o botão */
+    border-radius: 50px; /* Bordas arredondadas (tipo pílula) */
+    text-decoration: none;
+    font-weight: 700; /* Negrito */
+    font-size: 1.2em;
+    color: black; /* Cor do texto preto */
+    background: linear-gradient(to right, #FFD700, #FFA500); /* Amarelo ouro para Laranja */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Sombra para profundidade */
+    transition: all 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    position: relative; /* Para posicionamento do efeito LED */
+    overflow: hidden; /* Evita overflow do efeito LED */
+    animation: pulsar 2s infinite; /* Animação de pulsação */
+    margin-top: 20px;
+}
+
+/* Animação de pulsação */
+@keyframes pulsar {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.10); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.10); }
+    100% { transform: scale(1); }
+}
+
+/* Botão primário (azul clínico) */
+.botao-primario {
+    background-color: #4fe24a;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+/* Hover do botão primário */
+.botao-primario:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+    animation-play-state: paused; /* Pausa a pulsação no hover */
+}
+
+/* Botão de chamada à ação (verde) */
+.botao-cta {
+    background-color: #28a745;
+    width: 100%;
+    max-width: 400px;
+    margin: 25px auto 0;
+    display: block;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+    font-size: 1.2em;
+}
+
+/* Hover do botão CTA */
+.botao-cta:hover {
+    background-color: #1e7e34;
+    transform: translateY(-2px);
+    animation-play-state: paused; /* Pausa a pulsação no hover */
+}
+
+/* Botão flutuante do WhatsApp */
+/* Botão flutuante do WhatsApp */
+.whatsapp-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.botao-whatsapp {
+    background-color: #25D366; /* Cor de fundo verde do WhatsApp */
+    color: #fff;
+    width: 60px; /* Largura ajustada para o tamanho da imagem */
+    height: 60px; /* Altura ajustada para o tamanho da imagem */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2em; /* Tamanho do ícone do WhatsApp */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    animation: pulsar 2s infinite; /* Mantém a animação de pulsação */
+    position: relative; /* Para posicionar o balão de mensagem */
+}
+
+.botao-whatsapp::before {
+    display: none; /* Oculta o pseudo-elemento que criava o efeito LED */
+}
+
+/* Hover do botão WhatsApp */
+.botao-whatsapp:hover {
+    background-color: #1ebe57; /* Escurece um pouco no hover */
+    transform: scale(1.1);
+    animation-play-state: paused; /* Pausa a pulsação no hover */
+}
+
+/* Estilo para o balão de "Quer saber mais?" */
+.whatsapp-popup-message {
+    position: absolute;
+    right: 70px; /* Posição à esquerda do botão, ajuste conforme necessário */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 20px; /* Bordas arredondadas */
+    font-size: 0.5em;
+    white-space: nowrap; /* Impede que o texto quebre linha */
+    opacity: 0; /* Começa invisível */
+    visibility: hidden; /* Começa escondido */
+    transition: opacity 0.3s ease, visibility 0.5s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    /* Desenha o "bico" do balão */
+    &::after {
+        content: '';
+        position: absolute;
+        right: -8px; /* Posição do bico */
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg); /* Rotaciona para formar o bico */
+        width: 15px;
+        height: 15px;
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: 2px -2px 5px rgba(0,0,0,0.1);
+        z-index: -1;
+    }
+}
+
+/* Mostra o balão no hover do .whatsapp-container */
+.whatsapp-container:hover .whatsapp-popup-message {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Estilos para o Pop-up do WhatsApp */
+.whatsapp-popup {
+    display: none; /* Inicia escondido, será controlado pelo JS */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semitransparente */
+    z-index: 2000; /* Garante que fique acima de tudo */
+    pointer-events: none; /* Permite cliques através do overlay quando o popup está 'display: none' */
+}
+
+/* Nova classe para ativar a visibilidade do overlay */
+.whatsapp-popup.active {
+    display: flex; /* Usa flexbox para mostrar o overlay */
+    pointer-events: auto; /* Habilita interação quando visível */
+}
+
+.whatsapp-popup-content {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 350px; /* Largura máxima do pop-up */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* Para garantir que o header e border-radius funcionem bem */
+    position: absolute; /* Posicionamento absoluto dentro do viewport */
+    bottom: 90px; /* Posição vertical acima do botão do WhatsApp (60px de altura do botão + 30px de margem) */
+    right: 20px; /* Posição horizontal alinhada com o botão do WhatsApp */
+    transform: scale(0.8); /* Começa um pouco menor para o efeito de "surgir" */
+    opacity: 0; /* Começa invisível */
+    transform-origin: bottom right; /* Define o ponto de origem da animação (do canto inferior direito) */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Transição suave */
+}
+
+/* Estado ativo do conteúdo do popup (quando a classe 'active' é adicionada ao .whatsapp-popup) */
+.whatsapp-popup.active .whatsapp-popup-content {
+    transform: scale(1); /* Expande para o tamanho normal */
+    opacity: 1; /* Torna-se completamente visível */
+}
+
+.whatsapp-popup-header {
+    background-color: #25D366; /* Verde do WhatsApp */
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.whatsapp-popup-header .whatsapp-header-icon {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.whatsapp-popup-close {
+    cursor: pointer;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.whatsapp-popup-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.whatsapp-popup-chat-bubble {
+    background-color: #f0f0f0; /* Cor de fundo da bolha de chat */
+    border-radius: 15px 15px 15px 0; /* Bordas arredondadas com um canto reto */
+    padding: 15px;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 0.95em;
+    line-height: 1.4;
+    text-align: left;
+    position: relative;
+    /* Bico da bolha de chat */
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: -10px; /* Posição do bico */
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 10px 10px 0; /* Faz o triângulo */
+        border-color: transparent #f0f0f0 transparent transparent; /* Cor do bico */
+    }
+}
+
+.botao-whatsapp-popup-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 50px; /* Botão tipo pílula */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.botao-whatsapp-popup-link:hover {
+    background-color: #1ebe57;
+    transform: translateY(-2px);
+}
+
+.botao-whatsapp-popup-link i {
+    margin-left: 10px; /* Espaçamento do ícone */
+}
+
+/* Responsividade para o Pop-up */
+@media (max-width: 480px) {
+    .whatsapp-popup-content {
+        /* Ajusta o posicionamento para telas menores, talvez centralize ou reposicione */
+        bottom: 20px; /* Ajusta para aparecer acima do rodapé */
+        left: 20px;
+        right: 20px;
+        width: auto; /* Permite que a largura se ajuste dentro do padding */
+        max-width: none;
+    }
+    .whatsapp-popup-chat-bubble {
+        font-size: 0.9em;
+        padding: 12px;
+    }
+    .botao-whatsapp-popup-link {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+/* Hover do botão WhatsApp */
+.botao-whatsapp:hover {
+    background-color: #1ebe57;
+    transform: scale(1.1);
+    animation-play-state: paused; /* Pausa a pulsação no hover */
+}
+
+/* === Estilos das Seções === */
+.secao-hero, .secao-problema, .secao-solucao, .secao-modulos, .secao-valor, .secao-cta, .secao-perguntas {
+    padding: 60px 0; /* Padding uniforme */
+    text-align: center;
+    min-height: 400px; /* Altura mínima para consistência */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Seção Hero: Layout ajustado para imagem ao lado */
+.secao-hero {
+    background: none; /* Remove gradiente como fundo */
+    margin-bottom: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+    justify-content: space-between;
+}
+
+.secao-hero .container {
+    width: 55%; /* 55% da largura para o texto em telas maiores */
+    padding-right: 20px;
+}
+
+.secao-hero h1 {
+    font-size: 2.5em;
+}
+
+.secao-hero p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+}
+
+/* Seção Problema: Gradiente animado */
+.secao-problema {
+    background: linear-gradient(45deg, #0a0a0a, #1a1a1a, #000000, #2c2c2c);
+    background-size: 400%;
+    animation: gradienteFundo 15s ease infinite;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+/* Seção Solução: Imagem de enfermaria desfocada */
+.secao-solucao {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/banner2.webp') no-repeat center center/cover;
+    background-size: cover;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+/* Container da seção Solução para manter conteúdo nítido */
+.secao-solucao .container {
+    position: relative;
+    z-index: 1;
+    background: rgba(28, 37, 38, 0.9); /* Fundo semitransparente para legibilidade */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Seção Módulos: Gradiente animado */
+.secao-modulos {
+    background: linear-gradient(45deg, #0a0a0a, #1a1a1a, #000000, #2c2c2c);
+    background-size: 400%;
+    animation: gradienteFundo 15s ease infinite;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+/* Lista de módulos em grade */
+.lista-modulos {
+    display: grid;
+    grid-template-columns: 1fr; /* Uma coluna para mobile */
+    gap: 20px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+/* Item de módulo */
+.item-modulo {
+    background-color: #2a3436;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
+    width: 250px;
+}
+
+/* Hover do item de módulo com borda neon azul */
+.item-modulo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px 2px #4fe24a;
+}
+
+/* Título do item de módulo */
+.item-modulo h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Seção Valor: Imagem de enfermaria desfocada */
+.secao-valor {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/banner3.jpg') no-repeat center center/cover;
+    background-size: cover;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+/* Container da seção Valor para manter conteúdo nítido */
+.secao-valor .container {
+    position: relative;
+    z-index: 1;
+    background: rgba(28, 37, 38, 0.9); /* Fundo semitransparente para legibilidade */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Seção Perguntas Frequentes: Gradiente animado */
+.secao-perguntas {
+    background: linear-gradient(45deg, #0a0a0a, #1a1a1a, #000000, #2c2c2c);
+    background-size: 400%;
+    animation: gradienteFundo 15s ease infinite;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+/* Lista de perguntas frequentes */
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+}
+
+.faq-question {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #fff;
+    padding: 10px;
+    background-color: #2a3436;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #357abd;
+}
+
+.faq-answer {
+    display: none;
+    padding: 10px 15px;
+    background-color: #1c2526;
+    color: #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+/* Seção CTA: Gradiente animado */
+.secao-cta {
+    background: linear-gradient(45deg, #0a0a0a, #1a1a1a, #000000, #2c2c2c);
+    background-size: 400%;
+    animation: gradienteFundo 15s ease infinite;
+    border-radius: 10px;
+}
+
+/* Texto introdutório da CTA */
+.texto-cta {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Preço antigo */
+.preco-antigo {
+    font-size: 1.4em;
+    color: #999;
+    text-decoration: line-through;
+}
+
+/* Preço promocional */
+.preco-novo {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #28a745;
+    margin-bottom: 25px;
+}
+
+/* === Rodapé === */
+.rodape-principal {
+    background: linear-gradient(45deg, #0a0a0a, #1a1a1a, #000000, #2c2c2c);
+    background-size: 400%;
+    animation: gradienteFundo 15s ease infinite;
+    color: #ddd;
+    padding: 60px 0; /* Padding uniforme */
+    font-size: 0.85em;
+    border-radius: 10px 10px 0 0;
+    margin-top: 25px;
+}
+
+/* Container do rodapé */
+.rodape-principal .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Links de navegação do rodapé */
+.navegacao-rodape a {
+    color: #4fe24a;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+/* Hover dos links do rodapé */
+.navegacao-rodape a:hover {
+    color: #357abd;
+    text-decoration: underline;
+}
+
+/* === Menu Principal === */
+.menu-principal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 20px;
+    z-index: 1001;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(40px); /* Efeito glassmorphism */
+    background-color: rgba(28, 37, 38, 0.2); /* Cor base com opacidade */
+}
+
+.menu-items {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-items li {
+    margin: 0 10px;
+}
+
+.menu-items a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.menu-items a:hover {
+    color: #4fe24a;
+    background-color: #fff; /* Fundo branco no hover */
+    padding: 5px 10px; /* Padding para destaque */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.3); /* Efeito de sombra */   
+    transform: translateY(-2px); /* Efeito de elevação */  
+    transition: all 0.3s ease; /* Transição suave */
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 20px; /* Distância da margem direita no toggle */
+}
+
+/* === Media Queries === */
+/* Dispositivos Móveis (até 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        width: 100%; /* Ocupa toda a largura em mobile */
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.4em;
+    }
+    h3 {
+        font-size: 1.2em;
+    }
+    p {
+        font-size: 0.9em;
+    }
+    .botao {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    .secao-hero {
+        padding: 40px 0;
+        flex-direction: column; /* Empilha container e imagem em mobile */
+    }
+    .secao-hero .container {
+        width: 100%; /* Ocupa toda a largura em mobile */
+        padding-right: 0;
+    }
+    .imagem-hero {
+        width: 100%; /* Ocupa toda a largura abaixo do container */
+        margin-top: 20px;
+    }
+    .item-modulo {
+        padding: 15px;
+    }
+    .preco-novo {
+        font-size: 2.5em;
+    }
+    .botao-whatsapp {
+        width: 50px;
+        height: 50px;
+        font-size: 1.8em;
+    }
+    /* Menu hamburguer */
+    .menu-toggle {
+        display: block;
+    }
+    .menu-items {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 20px;
+        background-color: rgba(28, 37, 38, 0.8); /* Efeito glassmorphism */
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        width: 200px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .menu-items.active {
+        display: flex;
+    }
+    .menu-items li {
+        margin: 10px 0;
+    }
+}
+
+/* Dispositivos Móveis Maiores (481px e superior) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2.2em;
+    }
+    h2 {
+        font-size: 1.6em;
+    }
+    h3 {
+        font-size: 1.3em;
+    }
+    p {
+        font-size: 0.95em;
+    }
+    .botao {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    .secao-hero {
+        padding: 50px 0;
+    }
+    .secao-hero h1 {
+        font-size: 2.5em;
+    }
+    .secao-hero p {
+        font-size: 1.1em;
+    }
+    .imagem-hero {
+        min-height: 250px;
+    }
+}
+
+/* Tablets (768px e superior) */
+@media (min-width: 769px) {
+    .container {
+        width: 55%; /* 55% da largura para o texto */
+        max-width: 720px;
+        padding: 25px;
+    }
+    .secao-hero .container {
+        padding-right: 20px;
+    }
+    h1 {
+        font-size: 3em;
+    }
+    h2 {
+        font-size: 2.2em;
+    }
+    h3 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 1.05em;
+    }
+    .botao {
+        padding: 15px 35px;
+        font-size: 1.2em;
+    }
+    .secao-hero {
+        padding: 60px 0;
+    }
+    .secao-hero h1 {
+        font-size: 3.8em;
+    }
+    .secao-hero p {
+        font-size: 1.5em;
+    }
+    .lista-modulos {
+        grid-template-columns: repeat(2, 1fr); /* Matriz 2x2 para tablets */
+        gap: 30px;
+    }
+    .item-modulo {
+        padding: 30px;
+    }
+    .secao-cta {
+        padding: 60px 0;
+    }
+    .rodape-principal .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Desktops (1024px e superior) */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 960px;
+        padding: 30px;
+    }
+    h1 {
+        font-size: 3.5em;
+    }
+    h2 {
+        font-size: 2.8em;
+    }
+    h3 {
+        font-size: 1.6em;
+    }
+    .secao-hero {
+        padding: 60px 0;
+    }
+    .secao-hero h1 {
+        font-size: 4.2em;
+    }
+    .secao-hero p {
+        font-size: 1.6em;
+    }
+    .lista-modulos {
+        grid-template-columns: repeat(4, 1fr); /* Lado a lado para desktops */
+        gap: 20px;
+    }
+}
+
+/* Desktops Grandes (1366px e superior) */
+@media (min-width: 1366px) {
+    .container {
+        max-width: 1100px;
+    }
+    h1 {
+        font-size: 4em;
+    }
+    h2 {
+        font-size: 3.2em;
+    }
+    h3 {
+        font-size: 1.8em;
+    }
+    .secao-hero {
+        padding: 60px 0;
+    }
+    .secao-hero h1 {
+        font-size: 5em;
+    }
+    .secao-hero p {
+        font-size: 1.8em;
+    }
+}
+
+/* === Responsividade === */
+
+/* Smartwatch (Até 167px) */
+@media (max-width: 167px) {
+    body {
+        font-size: 0.6em; /* Tamanho da fonte menor */
+    }
+    .container {
+        width: 100%;
+        padding: 5px; /* Padding mínimo */
+        margin: 0 auto; /* Centraliza */
+    }
+    h1 {
+        font-size: 0.9em;
+        margin-bottom: 5px;
+    }
+    h2 {
+        font-size: 0.8em;
+        margin-bottom: 5px;
+    }
+    h3 {
+        font-size: 0.7em;
+        margin-bottom: 5px;
+    }
+    p {
+        font-size: 0.6em;
+        margin-bottom: 5px;
+    }
+    .botao {
+        padding: 5px 10px;
+        font-size: 0.6em;
+        margin-top: 10px;
+    }
+    .secao-hero, .secao-problema, .secao-solucao, .secao-modulos, .secao-valor, .secao-cta, .secao-perguntas {
+        padding: 20px 0;
+        min-height: auto; /* Remove altura mínima excessiva */
+    }
+    .imagem-hero {
+        display: none; /* Oculta a imagem hero em telas muito pequenas para economizar espaço */
+    }
+    .secao-hero .container {
+        width: 100%;
+        padding: 0 5px;
+    }
+    .lista-modulos {
+        grid-template-columns: 1fr; /* Força uma coluna */
+        gap: 10px;
+    }
+    .item-modulo {
+        padding: 10px;
+        width: 100%; /* Ocupa toda a largura disponível */
+        margin: 0 auto;
+    }
+    .icone-modulo {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+    }
+    .faq-question, .faq-answer {
+        font-size: 0.7em;
+        padding: 5px;
+    }
+    .preco-novo {
+        font-size: 1.5em;
+    }
+    .botao-whatsapp {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2em;
+        bottom: 10px;
+        right: 10px;
+    }
+    .menu-principal {
+        padding: 10px 5px;
+    }
+    .menu-toggle {
+        font-size: 1em;
+    }
+    .menu-items {
+        top: 40px;
+        left: 5px;
+        width: 120px;
+        padding: 5px;
+    }
+    .menu-items li {
+        margin: 5px 0;
+    }
+}
+
+/* Telas Ultra-Wide/4K (Acima de 2000px) */
+@media (min-width: 2001px) {
+    .container {
+        max-width: 1600px; /* Aumenta a largura máxima do container */
+        padding: 40px;
+    }
+    h1 {
+        font-size: 5.5em;
+    }
+    h2 {
+        font-size: 4em;
+    }
+    h3 {
+        font-size: 2.5em;
+    }
+    p {
+        font-size: 1.5em; /* Aumenta o tamanho do parágrafo */
+    }
+    .botao {
+        padding: 20px 50px;
+        font-size: 1.5em;
+    }
+    .secao-hero {
+        padding: 100px 0;
+    }
+    .secao-hero .container {
+        width: 50%; /* Ajusta a largura do texto na hero */
+        padding-right: 40px;
+    }
+    .secao-hero h1 {
+        font-size: 6.5em;
+    }
+    .secao-hero p {
+        font-size: 2em;
+    }
+    .imagem-hero {
+        width: 45%; /* Ajusta a largura da imagem na hero */
+        min-height: 500px; /* Aumenta a altura mínima */
+    }
+    .lista-modulos {
+        grid-template-columns: repeat(4, 1fr); /* Mantém 4 colunas */
+        gap: 40px; /* Aumenta o espaçamento */
+    }
+    .item-modulo {
+        padding: 40px;
+    }
+    .icone-modulo {
+        font-size: 3em;
+    }
+    .faq-question, .faq-answer {
+        font-size: 1.3em;
+    }
+    .preco-novo {
+        font-size: 4em;
+    }
+    .botao-cta {
+        max-width: 500px;
+        font-size: 1.8em;
+    }
+    .rodape-principal {
+        padding: 80px 0;
+    }
+    .navegacao-rodape a {
+        font-size: 1em;
+    }
+    .menu-principal {
+        padding: 30px 40px;
+    }
+    .menu-items li {
+        margin-left: 30px;
+    }
+    .botao-whatsapp {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5em;
+        bottom: 40px;
+        right: 40px;
+    }
+}
