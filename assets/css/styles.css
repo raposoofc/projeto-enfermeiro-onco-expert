@@ -111,6 +111,15 @@ strong {
     border: none; /* Garante que a imagem em si não tenha borda */
 }
 
+#mentor {
+    display: flex;
+    font-size: 2.5em;
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 10px; /* Espaçamento entre os itens */
+}
+
 /* === Estilos de Botões === */
 .botao {
     display: inline-flex; /* Usa flexbox para alinhar texto e ícone */
@@ -539,19 +548,42 @@ strong {
     cursor: pointer;
     position: relative;
     transition: background-color 0.3s ease;
+    /* Adicionado para alinhar texto e '+' */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .faq-question:hover {
     background-color: #357abd;
 }
 
+/* Estilo para o ícone de toggle do FAQ */
+.faq-toggle-icon {
+    transition: transform 0.3s ease; /* Transição para rotação */
+    font-size: 1.2em; /* Tamanho maior para o ícone */
+    font-weight: bold;
+}
+
+/* Rotação do ícone de toggle quando a pergunta está ativa */
+.faq-question.active .faq-toggle-icon {
+    transform: rotate(45deg); /* Gira o '+' para parecer um 'x' ou '-' */
+}
+
+
 .faq-answer {
-    display: none;
+    display: none; /* Escondido por padrão */
     padding: 10px 15px;
     background-color: #1c2526;
     color: #ddd;
     border-radius: 5px;
     margin-top: 5px;
+}
+
+/* Exibe a resposta quando a classe 'active' é adicionada */
+.faq-answer.active {
+    display: block; /* Torna a resposta visível */
 }
 
 /* Seção CTA: Gradiente animado */
@@ -649,7 +681,7 @@ strong {
 }
 
 .menu-items a:hover {
-    color: #4fe24a;
+    color: #050505;
     background-color: #fff; /* Fundo branco no hover */
     padding: 5px 10px; /* Padding para destaque */
     border-radius: 5px; /* Bordas arredondadas */
@@ -1044,4 +1076,8 @@ strong {
         bottom: 40px;
         right: 40px;
     }
+}
+
+#copy-rodape {
+    font-size: 0.8em;;
 }
