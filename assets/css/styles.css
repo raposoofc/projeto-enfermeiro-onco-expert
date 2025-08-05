@@ -54,6 +54,18 @@ h1, h2, h3 {
 h1 {
     font-size: 2em;
     color: #fff;
+    /* Efeito de brilho/sombra para o título principal */
+    text-shadow: 0 0 1px #4fe24a, 0 0 12px #4fe24a, 0 0 3px #4fe24a;
+    animation: pulsar-titulo 2s infinite alternate; /* Animação de pulsação */
+}
+/* Animação para o título */
+@keyframes pulsar-titulo {
+    0% {
+        text-shadow: 0 0 1px #FFFFFF, 0 0 2px #FFFFFF;
+    }
+    100% {
+        text-shadow: 0 0 3px #000000, 0 0 4px #4fe24a, 0 0 5x #000000;
+    }
 }
 
 /* Destaque no título */
@@ -94,23 +106,114 @@ strong {
     display: block;
 }
 
-/* Imagem da seção Hero */
-.imagem-hero {
-    width: 40%; /* 40% da largura da seção ao lado do container em telas maiores */
-    height: auto;
-    min-height: 300px;
-    background-color: transparent; /* Garante fundo transparente */
-    border: none; /* Remove bordas */
+/*
+/ ======================================================================================= /
+/                                   AJUSTES DE LAYOUT E ESTILOS PARA AS NOVAS SEÇÕES      /
+/ ======================================================================================= /
+*/
+
+/* Seção Hero/Introdução */
+.secao-inicio, .secao-problema, .secao-solucao {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 0;
+    text-align: center;
+    margin-bottom: 25px;
 }
 
-.imagem-hero img {
+.secao-inicio .container, .secao-problema .container, .secao-solucao .container {
     width: 100%;
-    height: 100%;
-    object-fit: contain; /* Ajusta a imagem para caber dentro do container, sem cortar */
-    border-radius: 0; /* Remove qualquer border-radius */
-    border: none; /* Garante que a imagem em si não tenha borda */
+    max-width: 900px;
 }
 
+.secao-inicio .imagem-hero, .secao-problema .imagem-problema, .secao-solucao .imagem-solucao {
+    display: none; /* Imagens desabilitadas por padrão em mobile para economizar espaço */
+}
+
+/* Layout de duas colunas para telas maiores */
+@media (min-width: 769px) {
+    .secao-inicio, .secao-problema, .secao-solucao {
+        text-align: left;
+    }
+    .secao-inicio .container, .secao-problema .container, .secao-solucao .container {
+        width: 55%;
+    }
+    .secao-inicio .imagem-hero, .secao-problema .imagem-problema, .secao-solucao .imagem-solucao {
+        display: block; /* Imagens ativadas para telas maiores */
+        width: 40%;
+        min-height: 300px;
+        height: auto;
+    }
+    .secao-inicio .imagem-hero img, .secao-problema .imagem-problema img, .secao-solucao .imagem-solucao img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+    .secao-problema .container, .secao-solucao .container {
+        /* Inverte a ordem para que a imagem fique à esquerda e o texto à direita */
+        order: 1;
+    }
+    .secao-problema .imagem-problema, .secao-solucao .imagem-solucao {
+        /* Inverte a ordem para que o texto fique à esquerda e a imagem à direita */
+        order: 2;
+    }
+}
+
+
+/* Layout da seção do mentor */
+.secao-mentor {
+    display: flex;
+    flex-wrap: wrap; /* Permite a quebra de linha em mobile */
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    background: linear-gradient(45deg, #0a0a0a, #1a1a1a, #000000, #2c2c2c);
+    background-size: 400%;
+    animation: gradienteFundo 15s ease infinite;
+}
+
+.imagem-mentor {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.imagem-mentor img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Imagem redonda */
+    border: 5px solid #4fe24a; /* Borda destacada */
+}
+
+/* Ajustes para telas maiores */
+@media (min-width: 769px) {
+    .secao-mentor {
+        justify-content: space-between;
+        text-align: left;
+    }
+    .imagem-mentor {
+        width: 30%;
+        max-width: none;
+        margin-right: 40px;
+        margin-bottom: 0;
+    }
+    .secao-mentor .container {
+        width: 60%;
+        margin: 0;
+    }
+}
+/*
+/ ======================================================================================= /
+/                       FIM DOS AJUSTES DE LAYOUT E ESTILOS                             /
+/ ======================================================================================= /
+*/
+
+/* Título da seção do mentor */
 #mentor {
     display: flex;
     font-size: 2.5em;
@@ -196,7 +299,7 @@ strong {
     background-color: #25D366; /* Cor de fundo verde do WhatsApp */
     color: #fff;
     width: 60px; /* Largura ajustada para o tamanho da imagem */
-    height: 60px; /* Altura ajustada para o tamanho da imagem */
+height: 60px; /* Altura ajustada para o tamanho da imagem */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -459,6 +562,8 @@ strong {
     background: rgba(28, 37, 38, 0.9); /* Fundo semitransparente para legibilidade */
     padding: 20px;
     border-radius: 8px;
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: none; /* Remove limitação de largura máxima */
 }
 
 /* Seção Módulos: Gradiente animado */
@@ -486,14 +591,58 @@ strong {
     padding: 20px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
+    transition: all 0.4s ease;
     width: 250px;
+    position: relative;
+    overflow: hidden;
+    min-height: 120px; /* Altura mínima para estado contraído */
 }
 
-/* Hover do item de módulo com borda neon azul */
+/* Estado contraído do item de módulo */
+.item-modulo p {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    margin: 0;
+}
+
+/* Seta piscante na parte inferior do card */
+.item-modulo::after {
+    content: '⌄';
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5em;
+    color: #4fe24a;
+    animation: piscar 1.5s infinite;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Animação de piscar para a seta */
+@keyframes piscar {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
+
+/* Estado expandido no hover */
 .item-modulo:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 15px 2px #4fe24a;
+    min-height: 200px; /* Altura expandida */
+    padding-bottom: 40px; /* Espaço extra para a seta */
+}
+
+.item-modulo:hover p {
+    opacity: 1;
+    max-height: 100px;
+    margin-top: 15px;
+}
+
+.item-modulo:hover::after {
+    transform: translateX(-50%) rotate(180deg); /* Gira a seta para cima no hover */
 }
 
 /* Título do item de módulo */
@@ -883,6 +1032,9 @@ strong {
         grid-template-columns: repeat(4, 1fr); /* Lado a lado para desktops */
         gap: 20px;
     }
+    .item-modulo {
+        padding: 30px;
+    }
 }
 
 /* Desktops Grandes (1366px e superior) */
@@ -907,6 +1059,10 @@ strong {
     }
     .secao-hero p {
         font-size: 1.8em;
+    }
+    .lista-modulos {
+        grid-template-columns: repeat(4, 1fr); /* Mantém 4 colunas */
+        gap: 20px;
     }
 }
 
