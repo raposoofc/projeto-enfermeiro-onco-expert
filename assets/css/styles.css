@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    line-height: 1.6;
+    line-height: 1.;
     /* Fundo preto metálico com gradiente animado em azul clínico */
     background: linear-gradient(45deg, #0a0a0a, #1a1a1a, #000000, #2c2c2c);
     background-size: 400%;
@@ -153,11 +153,11 @@ strong {
     }
     .secao-problema .container, .secao-solucao .container {
         /* Inverte a ordem para que a imagem fique à esquerda e o texto à direita */
-        order: 1;
+        order: 2;
     }
     .secao-problema .imagem-problema, .secao-solucao .imagem-solucao {
         /* Inverte a ordem para que o texto fique à esquerda e a imagem à direita */
-        order: 2;
+        order: 1;
     }
 }
 
@@ -172,7 +172,7 @@ strong {
     text-align: center;
     border-radius: 10px;
     margin-bottom: 25px;
-    background: linear-gradient(45deg, #0a0a0a, #1a1a1a, #000000, #2c2c2c);
+    background: linear-gradient(45deg, #0a0a0a, #1a1a1a, #000000, #3d3d3d);
     background-size: 400%;
     animation: gradienteFundo 15s ease infinite;
 }
@@ -187,7 +187,6 @@ strong {
     width: 100%;
     height: auto;
     border-radius: 50%; /* Imagem redonda */
-    border: 5px solid #4fe24a; /* Borda destacada */
 }
 
 /* Ajustes para telas maiores */
@@ -549,7 +548,7 @@ height: 60px; /* Altura ajustada para o tamanho da imagem */
 
 /* Seção Solução: Imagem de enfermaria desfocada */
 .secao-solucao {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/banner2.webp') no-repeat center center/cover;
+    background: linear-gradient(45deg, #0a0a0a, #1a1a1a, #000000, #2c2c2c);
     background-size: cover;
     border-radius: 10px;
     margin-bottom: 25px;
@@ -557,13 +556,10 @@ height: 60px; /* Altura ajustada para o tamanho da imagem */
 
 /* Container da seção Solução para manter conteúdo nítido */
 .secao-solucao .container {
-    position: relative;
-    z-index: 1;
-    background: rgba(28, 37, 38, 0.9); /* Fundo semitransparente para legibilidade */
-    padding: 20px;
-    border-radius: 8px;
-    width: 100%; /* Ocupa toda a largura disponível */
-    max-width: none; /* Remove limitação de largura máxima */
+    background-size: 400%;
+    animation: gradienteFundo 15s ease infinite;
+    border-radius: 10px;
+    margin-bottom: 25px;
 }
 
 /* Seção Módulos: Gradiente animado */
@@ -1236,4 +1232,45 @@ height: 60px; /* Altura ajustada para o tamanho da imagem */
 
 #copy-rodape {
     font-size: 0.8em;;
+}
+
+/* === Fundo com vídeo na seção problema === */
+.secao-problema {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.background-video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+    background-size: 400%;
+    animation: gradienteFundo 15s ease infinite;
+    opacity: 0.85;
+    z-index: 1;
+}
+
+.secao-problema .container {
+    position: relative;
+    z-index: 2;
 }
