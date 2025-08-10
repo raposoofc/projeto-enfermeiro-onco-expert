@@ -13,49 +13,65 @@ document.addEventListener('DOMContentLoaded', function () {
         link.addEventListener('click', function (evento) {
             evento.preventDefault();
             const idAlvo = this.getAttribute('href');
+            const menuItems = document.querySelector('.menu-items');
+            const menuToggleIcon = document.querySelector('.menu-toggle i');
+
             document.querySelector(idAlvo).scrollIntoView({
                 behavior: 'smooth'
             });
 
             // Fecha o menu hamburguer após clique (mobile)
-            const menuPrincipal = document.querySelector('.menu-principal');
-            if (menuPrincipal.classList.contains('active')) {
-                menuPrincipal.classList.remove('active');
+            if (menuItems.classList.contains('active')) {
+                menuItems.classList.remove('active');
+                menuToggleIcon.classList.remove('fa-times');
+                menuToggleIcon.classList.add('fa-bars');
             }
         });
     });
 
     // Toggle do menu mobile (hambúrguer)
     const menuToggle = document.querySelector('.menu-toggle');
-    const menuPrincipal = document.querySelector('.menu-principal');
-    if (menuToggle) {
+    const menuItems = document.querySelector('.menu-items');
+    if (menuToggle && menuItems) {
         menuToggle.addEventListener('click', function () {
-            menuPrincipal.classList.toggle('active');
+            menuItems.classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (menuItems.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times'); // Ícone "X" para fechar
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
         });
     }
 
 
     /* ==================================================
-        3. SEÇÃO FAQ — PERGUNTAS FREQUENTES
+       3. SEÇÃO FAQ — PERGUNTAS FREQUENTES
     =================================================== */
-
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(question => {
         question.addEventListener('click', () => {
             const answer = question.nextElementSibling;
+            const icon = question.querySelector('.faq-icon');
 
-            // Fecha todas as outras respostas abertas
-            faqQuestions.forEach(q => {
-                const a = q.nextElementSibling;
-                if (a !== answer && a.classList.contains('active')) {
-                    a.classList.remove('active');
-                    q.classList.remove('active');
+            // Fecha outras respostas abertas
+            document.querySelectorAll('.faq-answer').forEach(ans => {
+                if (ans !== answer && ans.style.display === 'block') {
+                    ans.style.display = 'none';
+                    ans.previousElementSibling.querySelector('.faq-icon').textContent = '+';
                 }
             });
 
-            // Alterna a atual
-            question.classList.toggle('active');
-            answer.classList.toggle('active');
+            // Alterna a resposta e o ícone da pergunta clicada
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                icon.textContent = '+';
+            } else {
+                answer.style.display = 'block';
+                icon.textContent = '-';
+            }
         });
     });
 
