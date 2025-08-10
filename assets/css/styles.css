@@ -143,36 +143,63 @@ strong {
    1.1 ANIMAÇÕES GLOBAIS
 ================================================== */
 @keyframes gradienteFundo {
-    0% { background-position: 0% 50%;}
+    0% {
+        background-position: 0% 50%;
+    }
 
-    50% { background-position: 100% 50%; }
+    50% {
+        background-position: 100% 50%;
+    }
 
-    100% { background-position: 0% 50%; }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 @keyframes pulsar-titulo {
-    0% { text-shadow: 0 0 1px #FFFFFF, 0 0 2px #FFFFFF; }
+    0% {
+        text-shadow: 0 0 1px #FFFFFF, 0 0 2px #FFFFFF;
+    }
 
-    100% {text-shadow: 0 0 3px #000000, 0 0 4px #4fe24a, 0 0 5px #000000; }
+    100% {
+        text-shadow: 0 0 3px #000000, 0 0 4px #4fe24a, 0 0 5px #000000;
+    }
 }
 
-@keyframes pulsar { 0% { transform: scale(1); }
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+    }
 
-    25% { transform: scale(1.10); }
+    25% {
+        transform: scale(1.10);
+    }
 
-    50% { transform: scale(1); }
+    50% {
+        transform: scale(1);
+    }
 
-    75% { transform: scale(1.10); }
+    75% {
+        transform: scale(1.10);
+    }
 
-    100% { transform: scale(1); }
+    100% {
+        transform: scale(1);
+    }
 }
 
 @keyframes pulseSeta {
-    0% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
 
-    50% { transform: scale(1.25); }
+    50% {
+        transform: scale(1.25);
+    }
 
-    100% { transform: scale(1); }
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* ==================================================
@@ -1528,6 +1555,7 @@ strong {
 
 /* === Correções para telas móveis pequenas (360px, 390px, 428px) === */
 @media (max-width: 428px) {
+
     /* Correção do ícone do botão - garantir que seja circular */
     .botao i {
         width: 28px !important;
@@ -1562,13 +1590,13 @@ strong {
     }
 
     .imagem-mentor {
-        order: 1;
+        order: 2;
         width: 80% !important;
         margin: 20px auto !important;
     }
 
     .secao-mentor .container {
-        order: 2;
+        order: 1;
         width: 90%;
     }
 
@@ -1587,6 +1615,7 @@ strong {
 
 /* === Correções para tablet 768px === */
 @media (min-width: 768px) and (max-width: 800px) {
+
     /* Seção Solução - Botão depois da imagem */
     .secao-solucao {
         flex-direction: column;
@@ -1610,13 +1639,13 @@ strong {
     }
 
     .imagem-mentor {
-        order: 1;
+        order: 2;
         width: 60% !important;
         margin: 20px auto !important;
     }
 
     .secao-mentor .container {
-        order: 2;
+        order: 1;
         width: 80%;
         text-align: center;
     }
@@ -1639,6 +1668,7 @@ strong {
 
 /* === Correções específicas para 800px === */
 @media (min-width: 800px) and (max-width: 820px) {
+
     /* Seção Solução - Botão depois da imagem */
     .secao-solucao {
         flex-direction: column;
@@ -1747,7 +1777,7 @@ strong {
     .secao-solucao .container p {
         font-size: 1.4em;
     }
-    
+
     /* Listas de Módulos */
     .lista-modulos {
         justify-content: center;
@@ -1765,6 +1795,7 @@ strong {
 
 /* === Telas de Celular (até 768px) === */
 @media (max-width: 768px) {
+
     /* Ajustes Gerais */
     h1 {
         font-size: 2.2em;
@@ -1789,10 +1820,11 @@ strong {
 
     /* Listas de Módulos */
     .item-modulo {
-        flex-basis: 80%; /* Ocupa quase toda a largura */
+        flex-basis: 80%;
+        /* Ocupa quase toda a largura */
         min-height: auto;
     }
-    
+
     /* Seção Valor */
     .valor-body {
         padding: 5px 20px;
@@ -1821,7 +1853,8 @@ strong {
 
     /* Ajustes Gerais */
     body {
-        overflow-x: hidden; /* Previne scroll horizontal */
+        overflow-x: hidden;
+        /* Previne scroll horizontal */
     }
 
     h1 {
@@ -1839,19 +1872,19 @@ strong {
     .secao-cta h2 {
         font-size: 2.2em;
     }
-    
+
     .secao-zeus .titulo-zeus {
         font-size: 2.2em;
     }
-    
+
     p {
         font-size: 1em;
     }
-    
+
     .secao-inicio p {
         font-size: 1.2em !important;
     }
-    
+
     .secao-solucao .container p {
         font-size: 1.2em;
     }
@@ -1875,23 +1908,26 @@ strong {
 
     /* Listas de Módulos */
     .item-modulo {
-        flex-basis: 95%; /* Quase 100% da largura */
+        flex-basis: 95%;
+        /* Quase 100% da largura */
     }
 
     /* Seção Zeus */
     #zeus {
         font-size: 1.2em;
     }
-    
+
     /* Caixa de Valor */
     .valor-principal {
         font-size: 2.5rem;
     }
 
-    .valor-de, .valor-por, .valor-avista {
+    .valor-de,
+    .valor-por,
+    .valor-avista {
         font-size: 1rem;
     }
-    
+
     /* FAQ */
     .faq-question {
         font-size: 1em;

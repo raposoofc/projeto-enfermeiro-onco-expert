@@ -16,3 +16,7 @@ Este é um projeto de landing page para o treinamento "Enfermeiro Onco-Expert". 
 - CSS
 - Javascript
 - Font Awesome (para os ícones)
+
+
+## Link oficial do projeto:
+[link será compartilhado aqui assim que o site estiver no ar] - © 2025 Enfermeiro Onco-Expert. Todos os direitos reservados.
