@@ -19,4 +19,4 @@ Este é um projeto de landing page para o treinamento "Enfermeiro Onco-Expert". 
 
 
 ## Link oficial do projeto:
-[link será compartilhado aqui assim que o site estiver no ar] - © 2025 Enfermeiro Onco-Expert. Todos os direitos reservados.
+(https://portacathenf.com/) - © 2025 Enfermeiro Onco-Expert. Todos os direitos reservados.
