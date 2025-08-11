@@ -442,18 +442,18 @@ strong {
 }
 
 .secao-problema p {
-    font-size: 1.8em;
+    font-size: 1.2em;
     padding-left: 15px;
 }
 
 .secao-problema h2 {
     margin-top: 1px;
     margin-bottom: 20px;
-    font-size: 3.5em;
+    font-size: 2.8em;
 }
 
 .secao-problema p strong {
-    font-size: 1.8em;
+    font-size: 1.4em;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -467,7 +467,7 @@ strong {
     }
 
     .secao-problema .container {
-        width: 80%;
+        width: 55%;
         order: 2;
     }
 
